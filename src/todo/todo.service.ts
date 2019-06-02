@@ -30,9 +30,9 @@ export class TodoService {
     }
 
     deleteTodo(todoId): Promise<any> {
-        let id = Number(todoId);
+        let id: number = Number(todoId);
         return new Promise(resolve => {
-            let index = this.todos.findIndex(todo => todo.id === id);
+            let index: number = this.todos.findIndex(todo => todo.id === id);
             if (index === -1) {
                 throw new HttpException('todo not found', 404);
             }
